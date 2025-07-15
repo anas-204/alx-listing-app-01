@@ -34,13 +34,32 @@ export interface Offers {
   occupants: string;
 }
 
+export interface Review {
+  name: string;
+  avatar: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
 export interface PropertyProps {
   name: string;
-  address: Address;
+  address: {
+    state: string;
+    city: string;
+    country: string;
+  };
   rating: number;
   category: string[];
   price: number;
-  offers: Offers;
+  offers: {
+    bed: string;
+    shower: string;
+    occupants: string;
+  };
   image: string;
   discount: string;
+  description?: string;
+  reviews?: Review[];
+  images?: string[];
 }
